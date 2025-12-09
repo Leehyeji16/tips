@@ -1,18 +1,24 @@
 body {
-    background-color: #F5F5F7 !important;
+    background-color: #FeFeFe !important;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-y: hidden;
 }
 
 .header_inner {
-    background-color: #F5F5F7 !important;
+    background-color: #FeFeFe !important;
 }
 
 .recommend_page {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    padding: 20px 30px;
+    min-height: auto;
+    padding: 40px 30px;
     margin-left: 200px;
-    background: #F5F5F7;
+    background: #FeFeFe;
     position: relative;
 }
 
@@ -28,13 +34,23 @@ body {
     z-index: 0;
     pointer-events: none;
 }
-
 .recommend_topNav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;     /* ✅ 다시 center로 */
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    position: relative;
 }
-
+.recommend_topNav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #E5E5EA;
+}
 .recommend_topNav,
 .recommend_content {
     position: relative;
@@ -49,11 +65,8 @@ body {
     color: #001A3A;
     text-decoration: none;
     transition: color 0.2s;
-    margin-top: 2.1rem;
     font-size: 18px;
-    margin-bottom: 20px;
     position: relative;
-    padding-bottom: 20px;
 }
 
 .btn_back img {
@@ -68,7 +81,6 @@ body {
     bottom: 0;
     width: 100vw;
     height: 1px;
-    background: #E5E5EA;
 }
 
 .btn_back:hover {
@@ -83,7 +95,6 @@ body {
 .page_navigation button {
     width: 40px;
     height: 40px;
-    border: 1px solid #ddd;
     border-radius: 8px;
     background: #fff;
     font-size: 14px;
@@ -102,7 +113,7 @@ body {
 .recommend_content {
     display: flex;
     gap: 24px;
-    flex: 1;
+    flex: none;
 }
 
 
@@ -118,6 +129,8 @@ body {
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.06);
+
 }
 
 .company_logo_area {
@@ -149,7 +162,6 @@ body {
 }
 
 .company_info {
-    padding: 24px 20px 16px;
     text-align: center;
 }
 
@@ -165,14 +177,14 @@ body {
     font-weight: 500;
     color: #000;
     line-height: 1.6;
-    margin-bottom: 36px;
+    margin-bottom: 37px;
+
 }
 
 .company_btns {
     display: flex;
     justify-content: center;
     gap: 6px;
-    padding: 0 20px 24px;
     margin-bottom: 40px;
 }
 
@@ -364,7 +376,7 @@ body {
     border-radius: 20px;
     flex-direction: column;
     margin-right: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     position: relative;
     z-index: 1;
 }
@@ -430,16 +442,16 @@ body {
     display: flex;
     align-items: stretch;
     position: relative;
-    min-height: 600px;
-    padding: 10px 0;
+    min-height: auto;
 }
 
 .mindmap_label {
     font-size: 14px;
     font-weight: 600;
-    color:#5E5E5E;
+    color: #5E5E5E;
+    margin-top: 20px;
     margin-bottom: 40px;
-    text-align: center;  
+    text-align: center;
 }
 
 .mindmap_left .mindmap_label {
@@ -456,7 +468,8 @@ body {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    align-self: flex-start;
+    /* ✅ 추가: 상단에 정렬 */
 }
 
 .recommend_list {
@@ -464,7 +477,8 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     gap: 14px;
-    flex: 1;
+    flex: 0 0 auto;
+    /* ✅ flex: 1을 flex: 0 0 auto로 변경 */
 }
 
 
@@ -704,11 +718,6 @@ body {
     stroke-width: 8;
 }
 
-.circle_chart .bg {
-    stroke: #E5E5E5;
-    stroke-width: 8;
-}
-
 .circle_chart .progress {
     stroke: #6E42D9;
     stroke-dashoffset: 283;
@@ -773,8 +782,7 @@ body {
     background: linear-gradient(90deg,
             #6E42D9 0%,
             #6E42D9 20%,
-            #226AD6 100%
-        );
+            #226AD6 100%);
 }
 
 .connection_lines {
@@ -879,13 +887,15 @@ body {
     display: flex;
     align-items: center;
     gap: 18px;
-    padding: 16px 16px 16px 16px;  /* ✅ 오른쪽 16px로 변경 */
+    padding: 16px 16px 16px 16px;
+    /* ✅ 오른쪽 16px로 변경 */
     border-bottom: none;
     margin-bottom: 20px;
     background: #FFFFFF;
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
+
 .popup_icon {
     width: 64px;
     height: 64px;
@@ -924,14 +934,17 @@ body {
     font-weight: 500;
     margin-right: 6px;
 }
+
 .popup_title p span:not(.divider) {
     color: #70757C;
     font-weight: 500;
-    margin-left: 6px;  /* ✅ 값 앞에 6px */
+    margin-left: 6px;
+    /* ✅ 값 앞에 6px */
 }
 
 .popup_title p .divider {
-    margin: 0 12px;  /* ✅ 구분선 양쪽 12px */
+    margin: 0 12px;
+    /* ✅ 구분선 양쪽 12px */
     color: #0000001A;
 }
 
@@ -987,7 +1000,7 @@ body {
 
 #nav ul li.active a,
 #nav ul li:nth-child(3) a {
-    background-color: #EDEFF0!important;
+    background-color: #EDEFF0 !important;
     color: #000 !important;
 }
 
@@ -1007,7 +1020,8 @@ body {
     border-radius: 20px;
     flex-direction: column;
     position: relative;
-
+    margin-right: 10px;
+    margin-bottom: 20px;
 }
 
 .recommend_chart_area::before {
