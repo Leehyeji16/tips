@@ -22,6 +22,7 @@ body {
     margin-left: 200px;
     background: #FeFeFe;
     position: relative;
+
 }
 
 .recommend_page::before {
@@ -41,7 +42,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* ✅ 다시 center로 */
     padding-bottom: 20px;
     margin-bottom: 20px;
     position: relative;
@@ -176,6 +176,7 @@ body {
     font-weight: 800;
     color: #000000;
     margin-bottom: 12px;
+    margin-top: 12px;
 }
 
 .company_desc {
@@ -207,6 +208,15 @@ body {
     font-weight: 600;
     text-decoration: none;
     transition: all 0.2s;
+}
+
+.company_btns a span img {
+    width: 16px;
+    /* 원하는 크기로 조절 */
+    height: 16px;
+    /* 비율 유지하려면 height는 auto도 가능 */
+    object-fit: contain;
+    display: block;
 }
 
 .btn_info {
@@ -280,7 +290,7 @@ body {
     display: block;
     font-size: 28px;
     font-weight: 500;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Clash Grotesk', 'Pretendard', sans-serif;
     line-height: 1.2;
     color: #fff !important;
 }
@@ -301,7 +311,7 @@ body {
     display: block;
     font-size: 32px;
     font-weight: 500;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Clash Grotesk', 'Pretendard', sans-serif;
     line-height: 1.2;
     margin-bottom: 9px;
     margin-top: 5px;
@@ -456,7 +466,7 @@ body {
     font-weight: 600;
     color: #5E5E5E;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -492,14 +502,15 @@ body {
     display: flex;
     align-items: center;
     gap: 0px;
-    padding: 8px 12px 14px;
+    padding: 8px 12px 10px;
     border-radius: 12px;
     cursor: pointer;
     position: relative;
     opacity: 0;
     transform: translateX(-20px);
     transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease;
-    z-index: 10;
+    z-index: 1000;
+    /* ✅ 10에서 1000으로 증가 */
 }
 
 .recommend_list li::after {
@@ -552,7 +563,8 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 10;
+    z-index: 100;
+    /* ✅ 10에서 100으로 낮춤 */
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
@@ -757,6 +769,9 @@ body {
     justify-content: center;
     position: relative;
     min-width: 300px;
+    z-index: 50;
+    /* ✅ 추가 */
+
 }
 
 .center_node {
@@ -811,6 +826,7 @@ body {
     opacity: 0.3;
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
+    stroke-opacity: 0.4;
     transition: stroke-dashoffset 1.2s ease, stroke 0.4s ease;
 }
 
@@ -852,19 +868,24 @@ body {
     border-radius: 20px;
     box-shadow: 2px 4px 20px 0px rgba(56, 56, 56, 0.1);
     padding: 10px;
-    z-index: 1000;
+    z-index: 10000 !important;
+    /* ✅ 999999에서 10000으로 (더 확실하게) */
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
     transition: all 0.3s ease;
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
+    pointer-events: none;
+    /* ✅ 추가: hover 전에는 클릭 불가 */
 }
 
 .recommend_list li:hover .info_popup {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto;
+    /* ✅ 추가: hover 시 클릭 가능 */
 }
 
 .info_popup.popup_right {
