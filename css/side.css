@@ -46,19 +46,19 @@
 }
 
 #nav ul li:nth-child(1) a {
-    background-image: url('/img/nav_ico1.png');
+    background-image: url('../img/nav_ico1.png');
 }
 
 #nav ul li:nth-child(2) a {
-    background-image: url('/img/nav_ico2.png');
+    background-image: url('../img/nav_ico2.png');
 }
 
 #nav ul li:nth-child(3) a {
-    background-image: url('/img/nav_ico3.png');
+    background-image: url('../img/nav_ico3.png');
 }
 
 #nav ul li:nth-child(4) a {
-    background-image: url('/img/nav_ico4.png');
+    background-image: url('../img/nav_ico4.png');
 }
 
 #nav ul li.active a,
