@@ -6,6 +6,8 @@ html,
 body {
     height: 100%;
     overflow-y: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .header_inner {
@@ -34,14 +36,17 @@ body {
     z-index: 0;
     pointer-events: none;
 }
+
 .recommend_topNav {
     display: flex;
     justify-content: space-between;
-    align-items: center;     /* ✅ 다시 center로 */
+    align-items: center;
+    /* ✅ 다시 center로 */
     padding-bottom: 20px;
     margin-bottom: 20px;
     position: relative;
 }
+
 .recommend_topNav::after {
     content: "";
     position: absolute;
@@ -51,6 +56,7 @@ body {
     height: 1px;
     background: #E5E5EA;
 }
+
 .recommend_topNav,
 .recommend_content {
     position: relative;

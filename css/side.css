@@ -1,4 +1,4 @@
-#header{
+#header {
     position: fixed;
     left: 0;
     top: 0;
@@ -6,62 +6,64 @@
     z-index: 1000;
 }
 
-.header_inner{
+.header_inner {
     width: 180px;
     height: 100%;
-    padding-top: 2.5rem;
 }
 
-#nav{
+#nav {
     width: 100%;
-    padding: 0 0 0 0.75rem;
+    padding: 0 0 0 12px;
+    margin-top: 40px;
 }
 
-#nav ul{
+#nav ul {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 7.5px;
 }
 
-#nav ul li{
+#nav ul li {
     width: 100%;
 }
 
-#nav ul li a{
-    font-family: var(--font3-);
+#nav ul li a {
+    font-family: 'Clash Grotesk', sans-serif;
     display: flex;
     align-items: center;
-    color: var(--fontGray1-);
-    padding: 0.75rem 1rem 0.75rem 3.125rem;
-    font-size: 0.938rem;
-    border-radius: 999px;
+    font-size: 15px;
     font-weight: 500;
-    background-position: left 1rem center !important;
+    line-height: 1;
+    color: #70757C;
+    padding: 12px 16px 12px 52px;
+    border-radius: 999px;
+    background-position: left 12px center !important;
     background-repeat: no-repeat !important;
-    background-size: 1.125rem auto !important;
-    transition: background-color 0.3s, color 0.3s;
+    background-size: 20px 20px !important;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    margin-bottom: 12px;
 }
 
-#nav ul li:nth-child(1) a{
-    background-image: url('../img/nav_ico1.svg');
+#nav ul li:nth-child(1) a {
+    background-image: url('/img/nav_ico1.png');
 }
 
-#nav ul li:nth-child(2) a{
-    background-image: url('../img/nav_ico2.svg');
+#nav ul li:nth-child(2) a {
+    background-image: url('/img/nav_ico2.png');
 }
 
-#nav ul li:nth-child(3) a{
-    background-image: url('../img/nav_ico3.svg');
+#nav ul li:nth-child(3) a {
+    background-image: url('/img/nav_ico3.png');
 }
 
-#nav ul li:nth-child(4) a{
-    background-image: url('../img/nav_ico4.svg');
+#nav ul li:nth-child(4) a {
+    background-image: url('/img/nav_ico4.png');
 }
 
 #nav ul li.active a,
 #nav ul li a:hover,
-#nav ul li a:focus-visible{
+#nav ul li a:focus-visible {
     background-color: var(--main-color2-);
     color: #000;
 }
@@ -84,7 +86,8 @@
     width: 100%;
     text-align: center;
     padding: 40px 58px 40px 58px;
-    border-top: 1px solid #E5E5E5; /* 로고 위에 가로선 */
+    border-top: 1px solid #E5E5E5;
+    /* 로고 위에 가로선 */
 }
 
 .header_logo img {
