@@ -202,9 +202,9 @@ $(function () {
 
                 paths.forEach(path => {
                     path.style.strokeDashoffset = '0';
-                    path.style.transition = 'stroke-dashoffset 1.2s ease';
+                    path.style.transition = 'stroke-dashoffset 2.5s ease';
                 });
-            }, 100);
+            }, 400);
 
             setTimeout(() => {
                 const colorBars = svg.querySelectorAll('path.color-bar');
@@ -212,7 +212,7 @@ $(function () {
                     bar.style.opacity = '1';
                     bar.style.transition = 'opacity 0.3s ease';
                 });
-            }, 1300);
+            }, 2000);
 
             setTimeout(() => {
                 operatorList.forEach((li, index) => {
@@ -226,7 +226,7 @@ $(function () {
                         li.classList.add('animate');
                     }, index * 80);
                 });
-            }, 1300);
+            }, 2000);
         }
 
         // 운영사 호버
@@ -261,8 +261,9 @@ $(function () {
                     line.style.strokeDashoffset = '1000';
                     setTimeout(() => {
                         line.style.strokeDashoffset = '0';
-                        line.style.transition = 'stroke-dashoffset 0.8s ease';
-                    }, 10);
+                        line.style.transition = 'stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1)';
+
+                    }, 80);
                 });
 
                 svg.querySelectorAll(`path.color-bar[data-from="${this.dataset.id}"]`).forEach(bar => {
@@ -288,15 +289,16 @@ $(function () {
                                 line.style.strokeDashoffset = '1000';
                                 setTimeout(() => {
                                     line.style.strokeDashoffset = '0';
-                                    line.style.transition = 'stroke-dashoffset 0.8s ease';
-                                }, 10);
+                                    line.style.transition = 'stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1)';
+
+                                }, 80);
                             });
 
                             setTimeout(() => {
                                 svg.querySelectorAll(`path.color-bar[data-to="${productId}"]`).forEach(bar => {
                                     bar.style.stroke = '';
                                 });
-                            }, 300);
+                            }, 850);
                         }
                     });
                 }, 800);
@@ -361,8 +363,9 @@ $(function () {
                     line.style.strokeDashoffset = '1000';
                     setTimeout(() => {
                         line.style.strokeDashoffset = '0';
-                        line.style.transition = 'stroke-dashoffset 0.8s ease';
-                    }, 10);
+                        line.style.transition = 'stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1)';
+
+                    }, 80);
                 });
 
                 svg.querySelectorAll(`path.color-bar[data-to="${this.dataset.id}"]`).forEach(bar => {
@@ -388,15 +391,16 @@ $(function () {
                                 line.style.strokeDashoffset = '1000';
                                 setTimeout(() => {
                                     line.style.strokeDashoffset = '0';
-                                    line.style.transition = 'stroke-dashoffset 0.8s ease';
-                                }, 10);
+                                    line.style.transition = 'stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1)';
+
+                                }, 80);
                             });
 
                             setTimeout(() => {
                                 svg.querySelectorAll(`path.color-bar[data-from="${operatorId}"]`).forEach(bar => {
                                     bar.style.stroke = '';
                                 });
-                            }, 300);
+                            }, 850);
                         }
                     });
                 }, 800);
