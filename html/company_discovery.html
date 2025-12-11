@@ -24,6 +24,9 @@
 </head>
 
 <body class="page-search">
+    <!-- Page Transition Overlay -->
+    <div class="page-transition-overlay"></div>
+    
     <div id="wrap">
         <!-- Side Include -->
         <div id="side-container"></div>
@@ -58,7 +61,7 @@
                                     창업기업의 성과 데이터를 기반으로 프로그램의 성장성과<br>
                                     정책효과, 그리고 TIPS가 선호하는 기업 트렌드를 파악할 수 있는 화면입니다.
                                 </p>
-                                <button class="card-button" onclick="location.href='company_discovery_loading.html'">READY</button>
+                                <button class="card-button" data-link="company_discovery_loading.html">READY</button>
                             </div>
                         </div>
 
@@ -77,7 +80,7 @@
                                     창업기업의 성과 데이터를 기반으로 프로그램의 성장성과 정책효과,<br>
                                     그리고 TIPS가 선호하는 기업 트렌드를 파악할 수 있는 화면입니다.
                                 </p>
-                                  <button class="card-button" onclick="location.href='company_discovery_loading.html'">READY</button>
+                                <button class="card-button" data-link="company_discovery_loading.html">READY</button>
                             </div>
                         </div>
                     </div>
@@ -91,8 +94,26 @@
     $(function () {
         // Side Include
         $('#side-container').load('../inc/side.html');
+        
+        // 페이지 로드 시 페이드인 효과
+        setTimeout(function() {
+            $('.page-transition-overlay').addClass('fade-out');
+        }, 100);
+        
+        // 버튼 클릭 시 페이지 전환 효과
+        $('.card-button').on('click', function(e) {
+            e.preventDefault();
+            const targetUrl = $(this).data('link');
+            
+            // 페이드아웃 시작
+            $('.page-transition-overlay').removeClass('fade-out').addClass('fade-in');
+            
+            // 애니메이션 후 페이지 이동
+            setTimeout(function() {
+                window.location.href = targetUrl;
+            }, 600); // 0.6초 후 이동
+        });
     });
 </script>
-<script src="../js/recommend.js"></script>
 
 </html>
