@@ -1,11 +1,10 @@
 /* ==================== Dashboard Layout ==================== */
 .dashboard_page {
-    margin-left: 289px;
-    padding: 40px;
+    margin-left: 180px; /* ✅ 통일 */
+    padding: 20px 60px; /* ✅ 통일 */
     background: #F5F5F7;
     min-height: 100vh;
 }
-
 /* Top Navigation */
 .dashboard_topNav {
     display: flex;
@@ -79,7 +78,6 @@
 
 /* ==================== Left Section - 기업 정보 카드 ==================== */
 .section_left {
-    background: #fff;
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);

@@ -22,8 +22,8 @@ body {
 
 .main-content {
     flex: 1;
-    margin-left: 180px;
-    padding: 20px 60px;  /* ← 수정 */
+    margin-left: 180px; /* ✅ 통일 */
+    padding: 20px 60px; /* ✅ 통일 */
     background:
         radial-gradient(circle at 10% 20%, rgba(250, 250, 246, 1) 0%, transparent 25%),
         radial-gradient(circle at 20% 50%, rgba(230, 229, 208, 0.3) 0%, transparent 30%),
@@ -47,7 +47,8 @@ body {
 
 .title-background {
     width: 1600px;
-    padding: 40px 40px;
+    padding: 40px; /* ✅ 40px 통일 */
+    margin-bottom: 16px; /* ✅ 간격 통일 */
     background: rgba(255, 255, 255, 0.3);
     border: 1px solid #ffffff;
     border-radius: 20px;
@@ -332,7 +333,47 @@ body {
 .card-button:active {
     transform: scale(0.98);
 }
+/* ==================== Page Load Animation ==================== */
+/* 위 박스와 텍스트는 즉시 표시 */
+.title-background,
+.page-category,
+.page-title,
+.page-description {
+    opacity: 1;
+    transform: none;
+}
 
+/* 아래 박스는 즉시 표시 */
+.card-wrapper {
+    opacity: 1;
+    transform: none;
+}
+
+/* 카드만 숨김 */
+.discovery-card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* 카드 애니메이션 적용 */
+.discovery-card.animate {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.discovery-card:first-child.animate {
+    animation-delay: 0.2s;
+}
+
+.discovery-card:last-child.animate {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* ==================== Responsive Design ==================== */
 @media (max-width: 1200px) {
     .main-content {
