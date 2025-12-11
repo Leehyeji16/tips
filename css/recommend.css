@@ -25,6 +25,24 @@ body {
 
 }
 
+.recommend_page::after {
+    content: '';
+    position: fixed;
+    top: -362.33px;
+    right: -800px;
+    width: 2034.34px;
+    height: 1049.78px;
+    background: radial-gradient(ellipse 80% 60% at center,
+            #E6E5D0 0%,
+            rgba(230, 229, 208, 0.6) 30%,
+            transparent 70%);
+    opacity: 0.3;
+    transform: rotate(15deg);
+    filter: blur(200px);
+    z-index: 0;
+    pointer-events: none;
+}
+
 .recommend_page::before {
     content: '';
     position: fixed;
@@ -212,9 +230,7 @@ body {
 
 .company_btns a span img {
     width: 16px;
-    /* 원하는 크기로 조절 */
     height: 16px;
-    /* 비율 유지하려면 height는 auto도 가능 */
     object-fit: contain;
     display: block;
 }
@@ -297,6 +313,7 @@ body {
 
 .grade_box.highlight .grade_range {
     color: rgba(255, 255, 255, 0.7);
+     margin-top: 10px;
 }
 
 .grade_label {
@@ -358,8 +375,8 @@ body {
 .stat_value {
     display: block;
     font-size: 18px;
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-family: 'Clash Grotesk', 'Pretendard', sans-serif;
     color: #000;
     margin-bottom: 19px;
 }
@@ -485,7 +502,6 @@ body {
     display: flex;
     flex-direction: column;
     align-self: flex-start;
-    /* ✅ 추가: 상단에 정렬 */
 }
 
 .recommend_list {
@@ -494,7 +510,6 @@ body {
     justify-content: flex-start;
     gap: 14px;
     flex: 0 0 auto;
-    /* ✅ flex: 1을 flex: 0 0 auto로 변경 */
 }
 
 
@@ -510,7 +525,7 @@ body {
     transform: translateX(-20px);
     transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s ease;
     z-index: 1000;
-    /* ✅ 10에서 1000으로 증가 */
+    pointer-events: auto;
 }
 
 .recommend_list li::after {
@@ -564,7 +579,6 @@ body {
     justify-content: center;
     position: relative;
     z-index: 100;
-    /* ✅ 10에서 100으로 낮춤 */
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
@@ -587,8 +601,8 @@ body {
     width: 62px;
     height: 62px;
     border-radius: 50%;
-    background: #F8F8FA;
-    border: 2px solid #E0E0E0;
+    background: transparent;
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -596,6 +610,8 @@ body {
     transition: all 0.3s ease;
     overflow: hidden;
     position: relative;
+    isolation: isolate;
+
 }
 
 .recommend_icon .circle_chart {
@@ -689,10 +705,6 @@ body {
     height: 100% !important;
 }
 
-.recommend_list li.connected .recommend_icon {
-    /*border-color: #6E42D9;*/
-    background: #F5F0FF;
-}
 
 .recommend_list li.connected .recommend_info .name {
     color: #6E42D9;
@@ -708,10 +720,7 @@ body {
     height: 100% !important;
 }
 
-.mindmap_right .recommend_list li.connected .recommend_icon {
-    /*border-color: #226AD6;*/
-    background: #EFF6FF;
-}
+
 
 .mindmap_right .recommend_list li.connected .recommend_info .name {
     color: #226AD6
@@ -734,6 +743,7 @@ body {
 .circle_chart circle {
     fill: none;
     stroke-width: 8;
+    stroke: #D1D1CD;
 }
 
 .circle_chart .progress {
@@ -826,7 +836,6 @@ body {
     opacity: 0.3;
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    stroke-opacity: 0.4;
     transition: stroke-dashoffset 1.2s ease, stroke 0.4s ease;
 }
 
@@ -835,31 +844,35 @@ body {
 }
 
 .connection_lines path.line.active {
-    opacity: 0.6;
+    opacity: 1;
 }
 
 .connection_lines path.line.active.left {
     stroke: url(#gradientLeft);
+    stroke-opacity: 1 !important;
 }
 
 .connection_lines path.line.active.right {
     stroke: url(#gradientRight);
+    stroke-opacity: 1 !important;
 }
 
 .connection_lines path.color-bar {
     fill: none;
     stroke-linecap: butt;
     stroke-width: 8px;
+    opacity: 1;
 }
 
-.connection_lines path.left-color {
-    stroke: #6E42D9
+.connection_lines path.color-bar.left-color {
+    stroke: #6E42D9;
+    stroke-opacity: 1;
 }
 
-.connection_lines path.right-color {
-    stroke: #226AD6
+.connection_lines path.color-bar.right-color {
+    stroke: #226AD6;
+    stroke-opacity: 1;
 }
-
 
 .info_popup {
     position: absolute;
@@ -869,7 +882,6 @@ body {
     box-shadow: 2px 4px 20px 0px rgba(56, 56, 56, 0.1);
     padding: 10px;
     z-index: 10000 !important;
-    /* ✅ 999999에서 10000으로 (더 확실하게) */
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -877,7 +889,6 @@ body {
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
     pointer-events: none;
-    /* ✅ 추가: hover 전에는 클릭 불가 */
 }
 
 .recommend_list li:hover .info_popup {
@@ -885,7 +896,6 @@ body {
     visibility: visible;
     transform: translateY(0);
     pointer-events: auto;
-    /* ✅ 추가: hover 시 클릭 가능 */
 }
 
 .info_popup.popup_right {
@@ -910,12 +920,16 @@ body {
     transform: translateY(-50%) translateX(0);
 }
 
+.connection_lines path.line.active.left,
+.connection_lines path.line.active.right {
+    mix-blend-mode: multiply;
+}
+
 .popup_header {
     display: flex;
     align-items: center;
     gap: 18px;
     padding: 16px 16px 16px 16px;
-    /* ✅ 오른쪽 16px로 변경 */
     border-bottom: none;
     margin-bottom: 20px;
     background: #FFFFFF;
@@ -966,12 +980,10 @@ body {
     color: #70757C;
     font-weight: 500;
     margin-left: 6px;
-    /* ✅ 값 앞에 6px */
 }
 
 .popup_title p .divider {
     margin: 0 12px;
-    /* ✅ 구분선 양쪽 12px */
     color: #0000001A;
 }
 
