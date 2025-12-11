@@ -148,9 +148,45 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             clearInterval(interval);
 
-            // STEP 04 완료 후 3초 뒤에 company_discovery_list.html로 이동
+            // STEP 04 완료 후 3초 뒤에 페이드아웃 시작
             setTimeout(() => {
-                location.href = 'company_discovery_after.html';
+                // 오버레이 요소 가져오기
+                let overlay = document.querySelector('.page-transition-overlay');
+
+                // 오버레이가 없으면 생성
+                if (!overlay) {
+                    overlay = document.createElement('div');
+                    overlay.className = 'page-transition-overlay';
+                    
+                    // 직접 스타일 설정
+                    overlay.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: #FAFAF6;
+                        z-index: 9999;
+                        opacity: 0;
+                        transition: opacity 0.6s ease;
+                        pointer-events: none;
+                    `;
+                    
+                    document.body.appendChild(overlay);
+                }
+
+                // 약간의 지연 후 opacity 변경 (transition 적용을 위해)
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        overlay.style.opacity = '1';
+                        overlay.style.pointerEvents = 'all';
+                    });
+                });
+
+                // 650ms 후 페이지 이동
+                setTimeout(() => {
+                    location.href = 'company_discovery_after.html';
+                }, 650);
             }, 3000);
         }
     }, 3000);
