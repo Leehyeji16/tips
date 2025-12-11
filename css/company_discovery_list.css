@@ -111,11 +111,13 @@
     padding: 4px;
     width: 380px;
     height: 56px;
+        align-items: center; /* ← 추가 */
+
 }
 
 .tab-btn {
     flex: 1;
-    padding: 0;
+    padding: 14px 0; /* ← 수정: 상하 패딩 동일하게 */
     font-family: 'Pretendard', sans-serif;
     font-weight: 600;
     font-size: 15px;
@@ -135,8 +137,6 @@
     background: #FFFFFF;
     font-weight: 700;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    width: 184px !important;
-    height: 44px !important;
 }
 
 .tab-btn:hover:not(.active) {
