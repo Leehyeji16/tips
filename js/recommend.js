@@ -42,6 +42,41 @@ $(function () {
 
         const svgNS = "http://www.w3.org/2000/svg";
 
+        // ✅ 그라데이션 정의 추가
+        let defs = svg.querySelector('defs');
+        if (!defs) {
+            defs = document.createElementNS(svgNS, 'defs');
+            svg.appendChild(defs);
+        }
+        let gradientLeft = svg.querySelector('#gradientLeft');
+        if (!gradientLeft) {
+            gradientLeft = document.createElementNS(svgNS, 'linearGradient');
+            gradientLeft.setAttribute('id', 'gradientLeft');
+            gradientLeft.setAttribute('x1', '0%');
+            gradientLeft.setAttribute('y1', '0%');
+            gradientLeft.setAttribute('x2', '100%');
+            gradientLeft.setAttribute('y2', '0%');
+            defs.appendChild(gradientLeft);
+        }
+        gradientLeft.innerHTML = `
+    <stop offset="0%" style="stop-color:#6E42D9;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#E8E3F5;stop-opacity:1" />
+`;
+        let gradientRight = svg.querySelector('#gradientRight');
+        if (!gradientRight) {
+            gradientRight = document.createElementNS(svgNS, 'linearGradient');
+            gradientRight.setAttribute('id', 'gradientRight');
+            gradientRight.setAttribute('x1', '0%');
+            gradientRight.setAttribute('y1', '0%');
+            gradientRight.setAttribute('x2', '100%');
+            gradientRight.setAttribute('y2', '0%');
+            defs.appendChild(gradientRight);
+        }
+        // 오른쪽 그라데이션 - 상품(진한)에서 중앙 블렌딩 영역까지
+        gradientRight.innerHTML = `
+    <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#226AD6;stop-opacity:1" />
+`;
         function drawConnections() {
             const GAP = 30;
             const existingPaths = svg.querySelectorAll('path');
@@ -236,7 +271,6 @@ $(function () {
                 centerNode.classList.add('purple');
                 centerNode.classList.remove('blue');
 
-                // ✅ 모든 서클을 #777로 변경
                 document.querySelectorAll('.circle_chart .progress').forEach(circle => {
                     circle.style.stroke = '#777';
                 });
@@ -248,7 +282,6 @@ $(function () {
                     bar.style.stroke = '#777';
                 });
 
-                // ✅ 현재 호버된 아이템의 서클은 원래 색상
                 const currentCircle = this.querySelector('.circle_chart .progress');
                 const currentText = this.querySelector('.percent_text');
                 if (currentCircle) currentCircle.style.stroke = '';
@@ -276,7 +309,6 @@ $(function () {
                         if (productLi) {
                             productLi.classList.add('connected');
 
-                            // ✅ 연결된 상품 서클도 원래 색상으로
                             const productCircle = productLi.querySelector('.circle_chart .progress');
                             const productText = productLi.querySelector('.percent_text');
                             if (productCircle) productCircle.style.stroke = '';
@@ -307,7 +339,6 @@ $(function () {
             li.addEventListener('mouseleave', function () {
                 centerNode.classList.remove('purple', 'blue');
 
-                // ✅ 모든 서클 색상 복구
                 document.querySelectorAll('.circle_chart .progress').forEach(circle => {
                     circle.style.stroke = '';
                 });
@@ -338,7 +369,6 @@ $(function () {
                 centerNode.classList.add('blue');
                 centerNode.classList.remove('purple');
 
-                // ✅ 모든 서클을 #777로 변경
                 document.querySelectorAll('.circle_chart .progress').forEach(circle => {
                     circle.style.stroke = '#777';
                 });
@@ -350,7 +380,6 @@ $(function () {
                     bar.style.stroke = '#777';
                 });
 
-                // ✅ 현재 호버된 아이템의 서클은 원래 색상
                 const currentCircle = this.querySelector('.circle_chart .progress');
                 const currentText = this.querySelector('.percent_text');
                 if (currentCircle) currentCircle.style.stroke = '';
@@ -378,7 +407,6 @@ $(function () {
                         if (operatorLi) {
                             operatorLi.classList.add('connected');
 
-                            // ✅ 연결된 운영사 서클도 원래 색상으로
                             const operatorCircle = operatorLi.querySelector('.circle_chart .progress');
                             const operatorText = operatorLi.querySelector('.percent_text');
                             if (operatorCircle) operatorCircle.style.stroke = '';
@@ -409,7 +437,6 @@ $(function () {
             li.addEventListener('mouseleave', function () {
                 centerNode.classList.remove('purple', 'blue');
 
-                // ✅ 모든 서클 색상 복구
                 document.querySelectorAll('.circle_chart .progress').forEach(circle => {
                     circle.style.stroke = '';
                 });
