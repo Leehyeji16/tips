@@ -27,7 +27,6 @@
     <div id="wrap">
         <!-- Side Include -->
         <div id="side-container"></div>
-
         <!-- Main Content -->
         <main class="main-content">
             <div class="content-wrapper">
@@ -99,5 +98,15 @@
         $('#side-container').load('../inc/side.html');
     });
 </script>
-
+<script>
+    $(function () {
+        // Side Include
+        $('#side-container').load('../inc/side.html');
+        
+        // 페이지 로드 시 카드만 애니메이션
+        setTimeout(() => {
+            $('.discovery-card').addClass('animate');
+        }, 100);
+    });
+</script>
 </html>

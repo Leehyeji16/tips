@@ -95,25 +95,14 @@
         // Side Include
         $('#side-container').load('../inc/side.html');
         
-        // 페이지 로드 시 페이드인 효과
-        setTimeout(function() {
-            $('.page-transition-overlay').addClass('fade-out');
-        }, 100);
-        
-        // 버튼 클릭 시 페이지 전환 효과
-        $('.card-button').on('click', function(e) {
-            e.preventDefault();
+        // 버튼 클릭 시 페이지 이동
+        $('.card-button').on('click', function() {
             const targetUrl = $(this).data('link');
-            
-            // 페이드아웃 시작
-            $('.page-transition-overlay').removeClass('fade-out').addClass('fade-in');
-            
-            // 애니메이션 후 페이지 이동
-            setTimeout(function() {
-                window.location.href = targetUrl;
-            }, 600); // 0.6초 후 이동
+            window.location.href = targetUrl;
         });
     });
 </script>
+<script src="../js/recommend.js"></script
+<script src="../js/recommend.js"></script>
 
 </html>
