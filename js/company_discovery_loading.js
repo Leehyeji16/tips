@@ -1,3 +1,16 @@
+// 페이지 로드 시 애니메이션
+document.addEventListener('DOMContentLoaded', function () {
+    // 약간의 지연 후 애니메이션 시작
+    setTimeout(() => {
+        document.querySelector('.left-section').classList.add('animate');
+        document.querySelector('.right-section').classList.add('animate');
+    }, 100);
+    
+    // 나머지 기존 코드...
+    const imageEl = document.getElementById('imageArea');
+    // ...
+});
+
 // 각 단계별 콘텐츠 데이터
 const stepsData = [
     {
@@ -157,36 +170,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!overlay) {
                     overlay = document.createElement('div');
                     overlay.className = 'page-transition-overlay';
-                    
-                    // 직접 스타일 설정
-                    overlay.style.cssText = `
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background: #FAFAF6;
-                        z-index: 9999;
-                        opacity: 0;
-                        transition: opacity 0.6s ease;
-                        pointer-events: none;
-                    `;
-                    
                     document.body.appendChild(overlay);
                 }
 
-                // 약간의 지연 후 opacity 변경 (transition 적용을 위해)
-                requestAnimationFrame(() => {
-                    requestAnimationFrame(() => {
-                        overlay.style.opacity = '1';
-                        overlay.style.pointerEvents = 'all';
-                    });
-                });
+                // 페이드아웃 효과
+                overlay.classList.remove('fade-out');
+                overlay.classList.add('fade-in');
 
-                // 650ms 후 페이지 이동
+                // 600ms 후 페이지 이동
                 setTimeout(() => {
                     location.href = 'company_discovery_after.html';
-                }, 650);
+                }, 600);
             }, 3000);
         }
     }, 3000);
