@@ -95,14 +95,19 @@
         // Side Include
         $('#side-container').load('../inc/side.html');
         
-        // 버튼 클릭 시 페이지 이동
+        // 버튼 클릭 시 페이지 이동 (GitHub Pages 대응)
         $('.card-button').on('click', function() {
             const targetUrl = $(this).data('link');
-            window.location.href = targetUrl;
+            // GitHub Pages인 경우 /tips/ 추가
+            if (window.location.hostname.includes('github.io')) {
+                window.location.href = '/tips/html/' + targetUrl;
+            } else {
+                // 로컬인 경우 상대 경로
+                window.location.href = targetUrl;
+            }
         });
     });
 </script>
-<script src="../js/recommend.js"></script
 <script src="../js/recommend.js"></script>
 
 </html>

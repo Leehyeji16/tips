@@ -57,7 +57,7 @@
                                     창업기업의 성과 데이터를 기반으로 프로그램의 성장성과<br>
                                     정책효과, 그리고 TIPS가 선호하는 기업 트렌드를 파악할 수 있는 화면입니다.
                                 </p>
-                                <button class="card-button" onclick="location.href='company_discovery_list.html'">
+                                <button class="card-button">
                                     <span class="btn-text-ready">READY</span>
                                     <span class="btn-text-start">START</span>
                                 </button>
@@ -79,7 +79,7 @@
                                     창업기업의 성과 데이터를 기반으로 프로그램의 성장성과 정책효과,<br>
                                     그리고 TIPS가 선호하는 기업 트렌드를 파악할 수 있는 화면입니다.
                                 </p>
-                                <button class="card-button" onclick="location.href='company_discovery_list.html'">
+                                <button class="card-button">
                                     <span class="btn-text-ready">READY</span>
                                     <span class="btn-text-start">START</span>
                                 </button>
@@ -96,17 +96,20 @@
     $(function () {
         // Side Include
         $('#side-container').load('../inc/side.html');
-    });
-</script>
-<script>
-    $(function () {
-        // Side Include
-        $('#side-container').load('../inc/side.html');
         
         // 페이지 로드 시 카드만 애니메이션
         setTimeout(() => {
             $('.discovery-card').addClass('animate');
         }, 100);
+        
+        // 버튼 클릭 시 페이지 이동
+        $('.card-button').on('click', function() {
+            if (window.location.hostname.includes('github.io')) {
+                window.location.href = '/tips/html/company_discovery_list.html';
+            } else {
+                window.location.href = 'company_discovery_list.html';
+            }
+        });
     });
 </script>
 </html>

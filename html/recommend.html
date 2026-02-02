@@ -848,6 +848,16 @@
         $(function () {
             // Side Include
             $('#side-container').load('../inc/side.html');
+            
+            // btn_back 클릭 이벤트
+            $('.btn_back').on('click', function(e) {
+                e.preventDefault();
+                if (window.location.hostname.includes('github.io')) {
+                    window.location.href = '/tips/html/company_discovery_list.html';
+                } else {
+                    window.location.href = 'company_discovery_list.html';
+                }
+            });
         });
     </script>
     <script src="../js/recommend.js"></script>

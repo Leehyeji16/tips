@@ -228,14 +228,6 @@
                             <!-- 오른쪽: 도넛 차트 -->
                             <div class="donut_chart_area_new">
                                 <canvas id="successDonutChart"></canvas>
-
-                                <!-- 화살표 포인터 -->
-                                <!-- <div class="donut_arrow">
-                                    <img src="../img/Polygon 8.png" alt="pointer">
-                                </div> -->
-
-                                <!-- 중앙 텍스트 -->
-                                <!-- 중앙 텍스트 -->
                                 <div class="donut_center_new">
                                     <strong id="donutCenterPercent">23.21%</strong>
                                     <span id="donutCenterLabel">외형 지표 가시화</span>
@@ -536,35 +528,48 @@
     <script src="../js/company_dashboard_4.js"></script>
     <script>
         const params = new URLSearchParams(window.location.search);
-        const dashboardType = params.get('type');   // a,b,c,d,e,f
-        const companyId = params.get('id');         // 회사 id
+        const dashboardType = params.get('type');
+        const companyId = params.get('id');
 
         console.log('id:', companyId, 'type:', dashboardType);
     </script>
     <script>
     $(function () {
-        const maxPage = 5;  // 총 파일 수
+        const maxPage = 5;
         const path = window.location.pathname;
-        const file = path.substring(path.lastIndexOf('/') + 1); // ex: company_dashboard_3.html
-
-        // 숫자 추출
+        const file = path.substring(path.lastIndexOf('/') + 1);
         const match = file.match(/company_dashboard_(\d+)\.html/);
 
         if (match) {
             const currentIndex = Number(match[1]);
 
-            // next 버튼: 마지막→1 로 순환
             $('.btn_next').on('click', function () {
                 const nextIndex = currentIndex === maxPage ? 1 : currentIndex + 1;
-                window.location.href = `company_dashboard_${nextIndex}.html`;
+                if (window.location.hostname.includes('github.io')) {
+                    window.location.href = `/tips/html/company_dashboard_${nextIndex}.html`;
+                } else {
+                    window.location.href = `company_dashboard_${nextIndex}.html`;
+                }
             });
 
-            // prev 버튼: 1→마지막(5) 로 순환
             $('.btn_prev').on('click', function () {
                 const prevIndex = currentIndex === 1 ? maxPage : currentIndex - 1;
-                window.location.href = `company_dashboard_${prevIndex}.html`;
+                if (window.location.hostname.includes('github.io')) {
+                    window.location.href = `/tips/html/company_dashboard_${prevIndex}.html`;
+                } else {
+                    window.location.href = `company_dashboard_${prevIndex}.html`;
+                }
             });
         }
+
+        $('.btn_back').on('click', function(e) {
+            e.preventDefault();
+            if (window.location.hostname.includes('github.io')) {
+                window.location.href = '/tips/html/company_discovery_list.html';
+            } else {
+                window.location.href = 'company_discovery_list.html';
+            }
+        });
     });
 </script>
 
