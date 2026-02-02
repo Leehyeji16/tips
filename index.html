@@ -2,132 +2,13 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=./html/company_discovery.html">
+    <script>
+        window.location.href = './html/company_discovery.html';
+    </script>
     <title>TIPS 기업 발굴 시스템</title>
-    
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/side.css">
-    <link rel="stylesheet" href="./css/company_discovery.css">
-    <link rel="stylesheet" href="./css/company_discovery_list.css">
-    <link rel="stylesheet" href="./css/company_discovery_loading.css">
-    <link rel="stylesheet" href="./css/recommend.css">
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-    <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@200,300,400,500,600,700,1&display=swap" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-    <div id="app"></div>
-
-    <script>
-        // 페이지 라우팅
-        const routes = {
-            '': 'company_discovery',
-            'company_discovery': 'company_discovery',
-            'company_discovery_list': 'company_discovery_list',
-            'company_discovery_loading': 'company_discovery_loading',
-            'recommend': 'recommend'
-        };
-
-        // 현재 페이지 로드
-        async function loadPage(pageName) {
-            try {
-                // GitHub Pages를 위한 절대 경로 사용
-                const basePath = window.location.pathname.replace(/\/[^\/]*$/, '');
-                const htmlPath = `${basePath}/html/${pageName}.html`;
-                
-                console.log('Loading:', htmlPath); // 디버깅용
-                
-                const response = await fetch(htmlPath);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const html = await response.text();
-                
-                // body 내용만 추출
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                const content = doc.querySelector('body').innerHTML;
-                
-                document.getElementById('app').innerHTML = content;
-                
-                // 사이드바 로드
-                const sidePath = `${basePath}/inc/side.html`;
-                $('#side-container').load(sidePath, function(response, status) {
-                    if (status === "error") {
-                        console.error('사이드바 로드 실패');
-                    } else {
-                        // 페이지별 스크립트 로드
-                        loadPageScript(pageName);
-                    }
-                });
-            } catch (error) {
-                console.error('페이지 로드 실패:', error);
-                document.getElementById('app').innerHTML = `<p>페이지를 불러올 수 없습니다. ${error.message}</p>`;
-            }
-        }
-
-        // 페이지별 스크립트 로드
-        function loadPageScript(pageName) {
-            // 기존 스크립트 제거
-            $('script[data-page-script]').remove();
-            
-            const basePath = window.location.pathname.replace(/\/[^\/]*$/, '');
-            
-            // 새 스크립트 추가
-            const scriptMap = {
-                'company_discovery': `${basePath}/js/company_discovery.js`,
-                'company_discovery_list': `${basePath}/js/company_discovery_list.js`,
-                'company_discovery_loading': `${basePath}/js/company_discovery_loading.js`,
-                'recommend': `${basePath}/js/recommend.js`
-            };
-            
-            if (scriptMap[pageName]) {
-                const script = document.createElement('script');
-                script.src = scriptMap[pageName];
-                script.setAttribute('data-page-script', 'true');
-                script.onerror = () => console.error(`스크립트 로드 실패: ${scriptMap[pageName]}`);
-                document.body.appendChild(script);
-            }
-        }
-
-        // URL 해시 기반 라우팅
-        function handleRoute() {
-            const hash = window.location.hash.slice(1) || '';
-            const pageName = routes[hash] || routes[''];
-            loadPage(pageName);
-        }
-
-        // 해시 변경 감지
-        window.addEventListener('hashchange', handleRoute);
-
-        // 초기 페이지 로드
-        handleRoute();
-
-        // 링크 클릭 시 페이지 전환
-        $(document).on('click', 'a[data-page]', function(e) {
-            e.preventDefault();
-            const pageName = $(this).data('page');
-            
-            if (routes[pageName]) {
-                window.location.hash = pageName;
-            }
-        });
-
-        // 기존 href 링크도 자동으로 해시 라우팅으로 변환
-        $(document).on('click', 'a[href^="./html/"]', function(e) {
-            e.preventDefault();
-            const href = $(this).attr('href');
-            const pageName = href.replace('./html/', '').replace('.html', '');
-            
-            if (routes[pageName]) {
-                window.location.hash = pageName;
-            }
-        });
-    </script>
+    <p>페이지 이동 중...</p>
 </body>
 </html>
