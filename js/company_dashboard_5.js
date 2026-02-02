@@ -233,11 +233,11 @@ document.addEventListener('DOMContentLoaded', function () {
             subtext: '추가 투자금 유치',
             angle: 0,
             tableData: [
-                { label: '4-7년차투자건수', value: '0.1', barSegments: 9, score: 91.6 },
-                { label: '4-7년차투자기사검색건수', value: '4.5', barSegments: 9, score: 98.2 },
-                { label: '4-7년차투자단계', value: '1', barSegments: 9, score: 98.9 },
-                { label: '4-7년차투자유치금액', value: '2,875', barSegments: 9, score: 99.5 },
-                { label: '5년차자본잉여금', value: '-84', barSegments: 4, score: 4.1 },
+                { label: '4-7년차투자건수', value: '0.3', barSegments: 9, score: 96.5 },
+                { label: '4-7년차투자기사검색건수', value: '4', barSegments: 9, score: 97.8 },
+                { label: '4-7년차투자단계', value: '0.6', barSegments: 9, score: 97.4 },
+                { label: '4-7년차투자유치금액', value: '171.4', barSegments: 9, score: 96.5 },
+                { label: '5년차자본잉여금', value: '1500', barSegments: 9, score: 95.6 },
             ]
         },
         {
@@ -245,13 +245,13 @@ document.addEventListener('DOMContentLoaded', function () {
             subtext: '브랜드 홍보 전략',
             angle: 45,
             tableData: [
-                { label: '4-7년차브랜드지재권종류', value: '0.5', barSegments: 7, score: 78.4 },
-                { label: '4-7년차상표권등록건수', value: '0.5', barSegments: 7, score: 74.8 },
-                { label: '4-7년차상표권출원건수', value: '0.5', barSegments: 7, score: 75.6 },
-                { label: '4-7년차전체기사검색건수', value: '22.5', barSegments: 9, score: 94.5 },
+                { label: '4-7년차브랜드지재권종류', value: '1.5', barSegments: 9, score: 98.7 },
+                { label: '4-7년차상표권등록건수', value: '1', barSegments: 8, score: 84 },
+                { label: '4-7년차상표권출원건수', value: '2.5', barSegments: 9, score: 93.7 },
+                { label: '4-7년차전체기사검색건수', value: '35.3', barSegments: 9, score: 96.7 },
                 { label: '5년차상표권출원대비등록', value: '0', barSegments: 0, score: 0 },
-                { label: '6년차상표권출원대비등록', value: '0', barSegments: 0, score: 0 },
-                { label: '7년차상표권출원대비등록', value: '0', barSegments: 0, score: 0 },
+                { label: '6년차상표권출원대비등록', value: '0.2', barSegments: 9, score: 95.6 },
+                { label: '7년차상표권출원대비등록', value: '3', barSegments: 9, score: 99.6 },
             ]
         },
         {
@@ -260,12 +260,12 @@ document.addEventListener('DOMContentLoaded', function () {
             angle: 90,
             tableData: [
                 { label: '4-7년차기술인증종류현황', value: '1', barSegments: 4, score: 45.3 },
-                { label: '4-7년차연구소인증건수', value: '0', barSegments: 0, score: 0 },
-                { label: '4-7년차특허등록건수', value: '9.8', barSegments: 9, score: 99.9 },
-                { label: '4-7년차특허출원건수', value: '9.3', barSegments: 9, score: 99.9 },
-                { label: '4년차특허출원대비등록', value: '0.8', barSegments: 9, score: 92.2 },
-                { label: '5년차특허출원대비등록', value: '0.9', barSegments: 9, score: 93.5 },
-                { label: '6년차특허출원대비등록', value: '0.6', barSegments: 9, score: 95.3 },
+                { label: '4-7년차연구소인증건수', value: '0.3', barSegments: 7, score: 77.1 },
+                { label: '4-7년차특허등록건수', value: '0.5', barSegments: 7, score: 73.7 },
+                { label: '4-7년차특허출원건수', value: '0.5', barSegments: 7, score: 75.6 },
+                { label: '4년차특허출원대비등록', value: '0', barSegments: 0, score: 0 },
+                { label: '5년차특허출원대비등록', value: '0', barSegments: 0, score: 0 },
+                { label: '6년차특허출원대비등록', value: '0', barSegments: 0, score: 0 },
                 { label: '7년차특허출원대비등록', value: '0', barSegments: 0, score: 0 },
             ]
         },
@@ -274,10 +274,10 @@ document.addEventListener('DOMContentLoaded', function () {
             subtext: '정부 출연금 확보',
             angle: 135,
             tableData: [
-                { label: '4-7년차RND수행건수', value: '0.5', barSegments: 9, score: 91.7 },
-                { label: '4년차RND금액', value: '470백만', barSegments: 9, score: 97.4 },
-                { label: '5년차RND금액', value: '438백만', barSegments: 9, score: 97.3 },
-                { label: '6년차RND금액', value: '481백만', barSegments: 9, score: 98.5 },
+                { label: '4-7년차RND수행건수', value: '0.3', barSegments: 8, score: 82.7 },
+                { label: '4년차RND금액', value: '0', barSegments: 0, score: 0 },
+                { label: '5년차RND금액', value: '0', barSegments: 0, score: 0 },
+                { label: '6년차RND금액', value: '60000000', barSegments: 9, score: 92.9 },
                 { label: '7년차RND금액', value: '0', barSegments: 10, score: 100 },
             ]
         },
@@ -286,9 +286,9 @@ document.addEventListener('DOMContentLoaded', function () {
             subtext: '외형 지표 가시화',
             angle: 180,
             tableData: [
-                { label: '4-7년차성과기사제목검색건수', value: '1.3', barSegments: 9, score: 95.9 },
-                { label: '5년차고용인원증가율', value: '0.5', barSegments: 9, score: 94.1 },
-                { label: '6년차고용인원증가율', value: '0', barSegments: 8, score: 84 },
+                { label: '4-7년차성과기사제목검색건수', value: '3', barSegments: 9, score: 98.2 },
+                { label: '5년차고용인원증가율', value: '0.5', barSegments: 9, score: 94.2 },
+                { label: '6년차고용인원증가율', value: '0', barSegments: 8, score: 84.3 },
                 { label: '7년차고용인원증가율', value: '-', barSegments: 0, score: 0 },
             ]
         },
@@ -297,18 +297,18 @@ document.addEventListener('DOMContentLoaded', function () {
             subtext: '우수한 인재 유치',
             angle: 225,
             tableData: [
-                { label: '4년차공시지가', value: '1,939', barSegments: 4, score: 42.3 },
-                { label: '4년차임금', value: '3.5', barSegments: 6, score: 69.6 },
-                { label: '4년차퇴사대비입사율', value: '3', barSegments: 9, score: 90.4 },
-                { label: '5년차공시지가', value: '1,939', barSegments: 4, score: 43.3 },
-                { label: '5년차임금', value: '3.7', barSegments: 7, score: 72.7 },
-                { label: '5년차퇴사대비입사율', value: '4.8', barSegments: 9, score: 98.4 },
-                { label: '6년차공시지가', value: '29,070', barSegments: 9, score: 95.1 },
-                { label: '6년차임금', value: '4.3', barSegments: 8, score: 87.4 },
-                { label: '6년차임금증가율', value: '0.2', barSegments: 8, score: 84.5 },
-                { label: '6년차퇴사대비입사율', value: '1.2', barSegments: 7, score: 74.4 },
-                { label: '7년차공시지가', value: '30,530', barSegments: 9, score: 95.5 },
-                { label: '7년차퇴사대비입사율', value: '1.8', barSegments: 8, score: 85.2 },
+                { label: '4년차공시지가', value: '826', barSegments: 2, score: 27.5 },
+                { label: '4년차임금', value: '1.9', barSegments: 4, score: 4.4 },
+                { label: '4년차퇴사대비입사율', value: '1', barSegments: 5, score: 57.5 },
+                { label: '5년차공시지가', value: '294', barSegments: 1, score: 12.3 },
+                { label: '5년차임금', value: '2.2', barSegments: 9, score: 9.7 },
+                { label: '5년차퇴사대비입사율', value: '1.4', barSegments: 7, score: 74.7 },
+                { label: '6년차공시지가', value: '107', barSegments: 4, score: 4.5 },
+                { label: '6년차임금', value: '2.3', barSegments: 1, score: 10.3 },
+                { label: '6년차임금증가율', value: '0', barSegments: 4, score: 48.8 },
+                { label: '6년차퇴사대비입사율', value: '1.1', barSegments: 7, score: 72.7 },
+                { label: '7년차공시지가', value: '527', barSegments: 2, score: 27.4 },
+                { label: '7년차퇴사대비입사율', value: '1.1', barSegments: 7, score: 74.7 },
             ]
         },
         {
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
             subtext: '해외 진출 활성화',
             angle: 270,
             tableData: [
-                { label: '4-7년차해외진출기사검색건수', value: '3.3', barSegments: 9, score: 96.1 },
+                { label: '4-7년차해외진출기사검색건수', value: '0.3', barSegments: 8, score: 84.3 },
             ]
         },
         {

@@ -227,17 +227,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const radarArea = document.querySelector('.radar_chart_area');
     if (!radarArea) return;
 
-    const labels = [
+const labels = [
         {
             text: 'F1',
             subtext: '추가 투자금 유치',
             angle: 0,
             tableData: [
                 { label: '4-7년차투자건수', value: '0.1', barSegments: 9, score: 91.6 },
-                { label: '4-7년차투자기사검색건수', value: '4.5', barSegments: 9, score: 98.2 },
-                { label: '4-7년차투자단계', value: '1', barSegments: 9, score: 98.9 },
-                { label: '4-7년차투자유치금액', value: '2,875', barSegments: 9, score: 99.5 },
-                { label: '5년차자본잉여금', value: '-84', barSegments: 4, score: 4.1 },
+                { label: '4-7년차투자기사검색건수', value: '1.5', barSegments: 9, score: 94.7 },
+                { label: '4-7년차투자단계', value: '0.5', barSegments: 9, score: 95.8 },
+                { label: '4-7년차투자유치금액', value: '1025', barSegments: 9, score: 98.6 },
+                { label: '5년차자본잉여금', value: '400', barSegments: 9, score: 90.7 },
             ]
         },
         {
@@ -245,11 +245,11 @@ document.addEventListener('DOMContentLoaded', function () {
             subtext: '브랜드 홍보 전략',
             angle: 45,
             tableData: [
-                { label: '4-7년차브랜드지재권종류', value: '0.5', barSegments: 7, score: 78.4 },
-                { label: '4-7년차상표권등록건수', value: '0.5', barSegments: 7, score: 74.8 },
-                { label: '4-7년차상표권출원건수', value: '0.5', barSegments: 7, score: 75.6 },
-                { label: '4-7년차전체기사검색건수', value: '22.5', barSegments: 9, score: 94.5 },
-                { label: '5년차상표권출원대비등록', value: '0', barSegments: 0, score: 0 },
+                { label: '4-7년차브랜드지재권종류', value: '1.3', barSegments: 9, score: 97.4 },
+                { label: '4-7년차상표권등록건수', value: '7.8', barSegments: 9, score: 99.2 },
+                { label: '4-7년차상표권출원건수', value: '12.8', barSegments: 9, score: 99.5 },
+                { label: '4-7년차전체기사검색건수', value: '72.8', barSegments: 9, score: 98.8 },
+                { label: '5년차상표권출원대비등록', value: '18', barSegments: 10, score: 100 },
                 { label: '6년차상표권출원대비등록', value: '0', barSegments: 0, score: 0 },
                 { label: '7년차상표권출원대비등록', value: '0', barSegments: 0, score: 0 },
             ]
@@ -259,14 +259,14 @@ document.addEventListener('DOMContentLoaded', function () {
             subtext: '높은 기술 준비도',
             angle: 90,
             tableData: [
-                { label: '4-7년차기술인증종류현황', value: '1', barSegments: 4, score: 45.3 },
-                { label: '4-7년차연구소인증건수', value: '0', barSegments: 0, score: 0 },
-                { label: '4-7년차특허등록건수', value: '9.8', barSegments: 9, score: 99.9 },
-                { label: '4-7년차특허출원건수', value: '9.3', barSegments: 9, score: 99.9 },
-                { label: '4년차특허출원대비등록', value: '0.8', barSegments: 9, score: 92.2 },
-                { label: '5년차특허출원대비등록', value: '0.9', barSegments: 9, score: 93.5 },
-                { label: '6년차특허출원대비등록', value: '0.6', barSegments: 9, score: 95.3 },
-                { label: '7년차특허출원대비등록', value: '0', barSegments: 0, score: 0 },
+                { label: '4-7년차기술인증종류현황', value: '1.8', barSegments: 9, score: 95.1 },
+                { label: '4-7년차연구소인증건수', value: '0.8', barSegments: 9, score: 98.5 },
+                { label: '4-7년차특허등록건수', value: '7', barSegments: 9, score: 99.8 },
+                { label: '4-7년차특허출원건수', value: '5.3', barSegments: 9, score: 99.6 },
+                { label: '4년차특허출원대비등록', value: '0.4', barSegments: 8, score: 89.8 },
+                { label: '5년차특허출원대비등록', value: '1.9', barSegments: 9, score: 98.3 },
+                { label: '6년차특허출원대비등록', value: '2', barSegments: 9, score: 98.5 },
+                { label: '7년차특허출원대비등록', value: '7', barSegments: 10, score: 100 },
             ]
         },
         {
@@ -275,9 +275,9 @@ document.addEventListener('DOMContentLoaded', function () {
             angle: 135,
             tableData: [
                 { label: '4-7년차RND수행건수', value: '0.5', barSegments: 9, score: 91.7 },
-                { label: '4년차RND금액', value: '470백만', barSegments: 9, score: 97.4 },
-                { label: '5년차RND금액', value: '438백만', barSegments: 9, score: 97.3 },
-                { label: '6년차RND금액', value: '481백만', barSegments: 9, score: 98.5 },
+                { label: '4년차RND금액', value: '462500000', barSegments: 9, score: 97.4 },
+                { label: '5년차RND금액', value: '422150000', barSegments: 9, score: 97.3 },
+                { label: '6년차RND금액', value: '277832000', barSegments: 9, score: 97.6 },
                 { label: '7년차RND금액', value: '0', barSegments: 10, score: 100 },
             ]
         },
@@ -286,9 +286,9 @@ document.addEventListener('DOMContentLoaded', function () {
             subtext: '외형 지표 가시화',
             angle: 180,
             tableData: [
-                { label: '4-7년차성과기사제목검색건수', value: '1.3', barSegments: 9, score: 95.9 },
-                { label: '5년차고용인원증가율', value: '0.5', barSegments: 9, score: 94.1 },
-                { label: '6년차고용인원증가율', value: '0', barSegments: 8, score: 84 },
+                { label: '4-7년차성과기사제목검색건수', value: '2.3', barSegments: 9, score: 97.7 },
+                { label: '5년차고용인원증가율', value: '-0.6', barSegments: 3, score: 32.5 },
+                { label: '6년차고용인원증가율', value: '-0.1', barSegments: 7, score: 70.9 },
                 { label: '7년차고용인원증가율', value: '-', barSegments: 0, score: 0 },
             ]
         },
@@ -297,18 +297,18 @@ document.addEventListener('DOMContentLoaded', function () {
             subtext: '우수한 인재 유치',
             angle: 225,
             tableData: [
-                { label: '4년차공시지가', value: '1,939', barSegments: 4, score: 42.3 },
-                { label: '4년차임금', value: '3.5', barSegments: 6, score: 69.6 },
-                { label: '4년차퇴사대비입사율', value: '3', barSegments: 9, score: 90.4 },
-                { label: '5년차공시지가', value: '1,939', barSegments: 4, score: 43.3 },
-                { label: '5년차임금', value: '3.7', barSegments: 7, score: 72.7 },
-                { label: '5년차퇴사대비입사율', value: '4.8', barSegments: 9, score: 98.4 },
-                { label: '6년차공시지가', value: '29,070', barSegments: 9, score: 95.1 },
-                { label: '6년차임금', value: '4.3', barSegments: 8, score: 87.4 },
-                { label: '6년차임금증가율', value: '0.2', barSegments: 8, score: 84.5 },
-                { label: '6년차퇴사대비입사율', value: '1.2', barSegments: 7, score: 74.4 },
-                { label: '7년차공시지가', value: '30,530', barSegments: 9, score: 95.5 },
-                { label: '7년차퇴사대비입사율', value: '1.8', barSegments: 8, score: 85.2 },
+                { label: '4년차공시지가', value: '18310', barSegments: 8, score: 88.1 },
+                { label: '4년차임금', value: '3.5', barSegments: 6, score: 69.5 },
+                { label: '4년차퇴사대비입사율', value: '2.4', barSegments: 8, score: 88.1 },
+                { label: '5년차공시지가', value: '18310', barSegments: 8, score: 89.1 },
+                { label: '5년차임금', value: '4.2', barSegments: 8, score: 88.1 },
+                { label: '5년차퇴사대비입사율', value: '0.5', barSegments: 3, score: 31.1 },
+                { label: '6년차공시지가', value: '299', barSegments: 1, score: 15.4 },
+                { label: '6년차임금', value: '4.2', barSegments: 8, score: 84.5 },
+                { label: '6년차임금증가율', value: '0', barSegments: 2, score: 26 },
+                { label: '6년차퇴사대비입사율', value: '1', barSegments: 5, score: 54.5 },
+                { label: '7년차공시지가', value: '299', barSegments: 1, score: 16.9 },
+                { label: '7년차퇴사대비입사율', value: '0', barSegments: 0, score: 0 },
             ]
         },
         {
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
             subtext: '해외 진출 활성화',
             angle: 270,
             tableData: [
-                { label: '4-7년차해외진출기사검색건수', value: '3.3', barSegments: 9, score: 96.1 },
+                { label: '4-7년차해외진출기사검색건수', value: '13', barSegments: 9, score: 99.2 },
             ]
         },
         {
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function () {
             subtext: '초격차 기술 개발',
             angle: 315,
             tableData: [
-                { label: '4-7년차초격차RND건수', value: '0.3', barSegments: 9, score: 90.7 },
+                { label: '4-7년차초격차RND건수', value: '0', barSegments: 0, score: 0 },
             ]
         },
     ];
