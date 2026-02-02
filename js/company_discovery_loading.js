@@ -170,6 +170,10 @@ function goNextPage() {
     overlay.classList.add('fade-in');
 
     setTimeout(() => {
-        location.href = 'company_discovery_after.html';
+        if (window.location.hostname.includes('github.io')) {
+            location.href = '/tips/html/company_discovery_after.html';
+        } else {
+            location.href = 'company_discovery_after.html';
+        }
     }, 600);
 }
