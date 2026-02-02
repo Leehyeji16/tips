@@ -21,8 +21,8 @@ body {
     background: #F5F5F4;
     position: relative;
     overflow-x: auto;
+    min-width: calc(1600px - 180px); /* 사이드바 너비 제외 */
 }
-
 
 .recommend_page::after {
     content: '';
@@ -136,11 +136,11 @@ body {
 .recommend_content {
     display: flex;
     gap: 30px;
-
     flex-wrap: nowrap;
     width: max-content;
+    min-width: 1400px;
+    padding-right: 30px; /* 오른쪽 여백 추가 */
 }
-
 .company_card {
     width: 330px;
     flex-shrink: 0;
@@ -474,24 +474,6 @@ body {
     padding: 0 20px;
 }
 
-.legend {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.legend_item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.section_title {
-    font-size: 20px;
-    font-weight: 700;
-    color: #252525;
-}
-
 /* Center Section */
 .center_section {
     padding: 30px;
@@ -515,11 +497,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     overflow: visible;
 }
 
-/* 배경 이미지 */
 .radar_chart_area video {
     position: absolute;
     top: 50%;
@@ -575,13 +555,11 @@ body {
     justify-content: center;
 }
 
-
 .factors_title {
     font-family: Pretendard;
     font-weight: 700;
     font-style: Bold;
     font-size: 15px;
-    leading-trim: NONE;
     line-height: 100%;
     letter-spacing: -2%;
     color: #5E5E5E;
@@ -617,7 +595,6 @@ body {
     box-shadow: none !important;
     outline: none !important;
 }
-
 
 .factor_info {
     display: flex;
@@ -662,7 +639,6 @@ body {
     display: block;
 }
 
-/* 화살표 포인터 */
 .donut_arrow {
     position: absolute;
     top: 50%;
@@ -715,6 +691,7 @@ body {
 }
 
 .right_section {
+    width: 580px;
     flex-shrink: 0;
     border-radius: 20px;
 }
@@ -990,11 +967,9 @@ body {
         transform: scale(0.9);
         opacity: 0.5;
     }
-
     60% {
         transform: scale(1.1);
     }
-
     100% {
         background: #6E42D9;
         transform: scale(1);
@@ -1058,63 +1033,4 @@ body {
 
 .radar_label.active .radar_label_sub {
     color: #9A7CE3 !important;
-}
-
-@media (max-width: 1600px) {
-    .recommend_content {
-        gap: 20px;
-    }
-
-}
-
-@media (max-width: 1400px) {
-    .recommend_content {
-        flex-direction: column;
-    }
-
-    .company_card,
-    .right_section {
-        width: 100%;
-        max-width: 600px;
-    }
-
-    .score_gauges {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 1200px) {
-    .factors_container {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .factors_list {
-        width: 100%;
-    }
-
-    .donut_chart_area_new {
-        width: 200px;
-        height: 200px;
-    }
-
-    .donut_arrow {
-        width: 16px;
-        height: 16px;
-    }
-}
-
-@media (max-width: 768px) {
-    .recommend_page {
-        margin-left: 0;
-        padding: 15px;
-    }
-
-    .company_stats {
-        grid-template-columns: 1fr;
-    }
-
-    .score_gauges {
-        grid-template-columns: 1fr;
-    }
 }

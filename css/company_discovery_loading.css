@@ -1,8 +1,22 @@
-html,
+html {
+    overflow-x: auto;
+    overflow-y: auto;
+    min-width: 1880px;
+}
+
 body {
     height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    min-width: 1880px;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(250, 250, 246, 1) 0%, transparent 25%),
+        radial-gradient(circle at 20% 50%, rgba(230, 229, 208, 0.3) 0%, transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(172, 205, 255, 0.4) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(58, 16, 110, 0.35) 0%, transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(71, 66, 217, 0.25) 0%, transparent 45%),
+        #FAFAF6;
+    background-attachment: fixed;
 }
 
 .top-box,
@@ -29,24 +43,17 @@ body {
 .main-content {
     flex: 1;
     margin-left: 180px;
-    /* ✅ 통일 */
     padding: 20px 60px;
-    /* ✅ 통일 */
-    background:
-        radial-gradient(circle at 10% 20%, rgba(250, 250, 246, 1) 0%, transparent 25%),
-        radial-gradient(circle at 20% 50%, rgba(230, 229, 208, 0.3) 0%, transparent 30%),
-        radial-gradient(circle at 80% 30%, rgba(172, 205, 255, 0.4) 0%, transparent 40%),
-        radial-gradient(circle at 85% 75%, rgba(58, 16, 110, 0.35) 0%, transparent 40%),
-        radial-gradient(circle at 50% 85%, rgba(71, 66, 217, 0.25) 0%, transparent 45%),
-        #FAFAF6;
+    background: transparent; /* 배경 제거 */
     min-height: 100vh;
+    min-width: 1700px;
 }
 
 .content-wrapper {
     max-width: 1600px;
     margin: 0 auto;
     padding-left: 0;
-    /* ✅ 통일 */
+    min-width: 1600px;
 }
 
 /* ==================== Page Header ==================== */
@@ -57,9 +64,7 @@ body {
 .title-background {
     width: 1600px;
     padding: 40px;
-    /* ✅ 40px 통일 */
     margin-bottom: 16px;
-    /* ✅ 간격 통일 */
     background: rgba(255, 255, 255, 0.3);
     border: 1px solid #ffffff;
     border-radius: 20px;
@@ -175,13 +180,11 @@ body {
     --line-gradient: #6E42D9;
 }
 
-/* 회색 배경선 */
 .step-item::after {
     content: '';
     position: absolute;
     left: 17px;
     top: 62px;
-    /* padding 20px + icon 42px */
     width: 8px;
     height: 45px;
     background: #E5E7EB;
@@ -192,7 +195,6 @@ body {
     display: none;
 }
 
-/* 그라데이션 채워지는 선 */
 .step-item::before {
     content: '';
     position: absolute;
@@ -204,7 +206,6 @@ body {
     z-index: 3;
 }
 
-/* 아이콘 기본 스타일 */
 .step-icon {
     width: 42px;
     height: 42px;
@@ -217,10 +218,8 @@ body {
     position: relative;
     transition: all 0.5s ease;
     z-index: 10;
-    /* 선보다 위에 */
 }
 
-/* Completed 아이콘 */
 .step-item.completed .step-icon {
     background: #6E42D9;
 }
@@ -237,17 +236,14 @@ body {
     filter: brightness(0) invert(1);
 }
 
-/* Inactive: 원래 색상 아이콘 */
 .step-item:not(.active):not(.completed) .step-icon img {
     filter: none;
 }
 
-/* Active 아이콘 */
 .step-item.active .step-icon {
     background: #6E42D9;
 }
 
-/* Active 아이콘 바깥 원 */
 .step-item.active .step-icon::before {
     content: '';
     position: absolute;
@@ -261,33 +257,19 @@ body {
     z-index: -1;
 }
 
-/* Completed 아이콘 원 제거 */
 .step-item.completed .step-icon::before {
     display: none;
 }
 
-/* Inactive 아이콘 */
 .step-item:not(.active):not(.completed) .step-icon {
     background: #F3F4F6;
 }
 
-/* SVG 크기 */
 .step-icon svg {
     width: 24px;
     height: 24px;
 }
 
-/* SVG 색상 */
-.step-item:not(.active):not(.completed) .step-icon svg path {
-    stroke: #9CA3AF;
-}
-
-.step-item.active .step-icon svg path,
-.step-item.completed .step-icon svg path {
-    stroke: white;
-}
-
-/* SVG 색상 */
 .step-item:not(.active):not(.completed) .step-icon svg path {
     stroke: #9CA3AF;
 }
@@ -309,7 +291,6 @@ body {
 .step-text-wrapper {
     display: flex;
     align-items: center;
-    /* 타이틀과 화살표를 가로로 정렬 */
     width: 100%;
 }
 
@@ -330,11 +311,9 @@ body {
     transition: color 0.3s ease;
 }
 
-/* Active: 보라색 라벨 */
 .step-item.active .step-label {
     color: #252525;
 }
-
 
 .step-item:not(.active):not(.completed) .step-label {
     color: #B4B8BF;
@@ -351,17 +330,12 @@ body {
     color: #252525;
 }
 
-/* 이 부분으로 변경 */
 .step-item.completed .step-label,
 .step-item:not(.active):not(.completed) .step-label {
     color: #B4B8BF;
 }
 
 .step-item.completed .step-title,
-.step-item:not(.active):not(.completed) .step-title {
-    color: #B4B8BF;
-}
-
 .step-item:not(.active):not(.completed) .step-title {
     color: #B4B8BF;
 }
@@ -384,42 +358,30 @@ body {
     transition: filter 0.3s ease;
 }
 
-/* Active: 검은색 화살표 */
 .step-item.active .step-arrow {
     opacity: 1;
 }
 
 .step-item.active .step-arrow img {
     filter: none;
-    /* 원본 색상 (검정) */
 }
 
-/* Completed: 회색 화살표 */
 .step-item.completed .step-arrow {
     opacity: 1;
 }
 
 .step-item.completed .step-arrow img {
     filter: brightness(0) saturate(100%) invert(79%) sepia(6%) saturate(249%) hue-rotate(188deg) brightness(91%) contrast(88%);
-    /* #B4B8BF */
 }
 
-/* Inactive: 투명 */
 .step-item:not(.active):not(.completed) .step-arrow {
     opacity: 0.3;
 }
 
 .step-item:not(.active):not(.completed) .step-arrow img {
     filter: brightness(0) saturate(100%) invert(79%) sepia(6%) saturate(249%) hue-rotate(188deg) brightness(91%) contrast(88%);
-    /* #B4B8BF */
 }
 
-.step-item.active .step-arrow,
-.step-item.completed .step-arrow {
-    opacity: 1;
-}
-
-/* 애니메이션 효과 추가 */
 .section-title,
 .section-description,
 .image-area {
@@ -433,7 +395,6 @@ body {
     justify-content: center;
 }
 
-
 .image-area {
     position: relative;
     width: 1000px;
@@ -444,9 +405,10 @@ body {
     border-radius: 20px;
     transition: all 0.5s ease;
 }
+
 .image-area.video-mode {
-    width: 1000px;  /* 이미지와 동일 */
-    height: 681px;  /* 이미지와 동일 */
+    width: 1000px;
+    height: 681px;
     border: 1px solid #E7E7E780;
     background: rgba(231, 231, 231, 0.5);
     display: flex;
@@ -455,45 +417,26 @@ body {
     padding: 34px 33.5px;
     box-sizing: border-box;
 }
-#stepVideo {
-    width: 830px;
-    height: 536px;
-    object-fit: cover;
-    display: none;
-    border-radius: 20px;
-}
-.section-title,
-.section-description,
-.image-area {
-    transition: opacity 0.5s ease-in-out;
-}
-
-
-.step-item.active .step-icon {
-    transition: background 0.5s ease;
-}
 
 #stepVideo {
-    width: 100%;  /* 패딩 제외한 내부 영역에 맞춤 */
+    width: 100%;
     height: 100%;
     object-fit: cover;
     display: none;
     border-radius: 20px;
 }
 
-/* ==================== Page Load Animation ==================== */
-.bottom-box {
-    /* 기존 스타일 유지 */
+.step-item.active .step-icon {
+    transition: background 0.5s ease;
 }
 
-/* 초기 상태: 숨김 */
+/* ==================== Page Load Animation ==================== */
 .left-section,
 .right-section {
     opacity: 0;
     transform: translateY(30px);
 }
 
-/* 애니메이션 적용 */
 .left-section.animate,
 .right-section.animate {
     animation: fadeInUp 0.8s ease forwards;
@@ -501,39 +444,11 @@ body {
 
 .right-section.animate {
     animation-delay: 0.2s;
-    /* 오른쪽이 살짝 늦게 */
 }
 
 @keyframes fadeInUp {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-/* ==================== Responsive Design ==================== */
-@media (max-width: 1400px) {
-    .bottom-box {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .content-wrapper {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .top-box,
-    .bottom-box {
-        width: 100%;
-    }
-
-    .page-title {
-        font-size: 32px;
-    }
-
-    .section-title {
-        font-size: 24px;
     }
 }

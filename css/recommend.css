@@ -1,17 +1,25 @@
-body {
-    background-color: #FeFeFe !important;
+html {
+    overflow-x: auto;
+    overflow-y: auto;
+    min-width: 1880px;
 }
 
-html,
 body {
+    background-color: #FAFAF6 !important;
     height: 100%;
-    overflow-y: hidden;
     margin: 0;
     padding: 0;
+    overflow: visible;
+    min-width: 1880px;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 20%, #E6E5D0 0%, rgba(230, 229, 208, 0.6) 30%, transparent 70%),
+        radial-gradient(circle at 100% 100%, rgba(110, 66, 217, 0.15) 0%, transparent 70%),
+        #FAFAF6;
+    background-attachment: fixed;
 }
 
 .header_inner {
-    background-color: #FeFeFe !important;
+    background-color: #FAFAF6 !important;
 }
 
 .recommend_page {
@@ -19,41 +27,15 @@ body {
     flex-direction: column;
     min-height: auto;
     padding: 40px 30px;
-    margin-left: 200px;
-    background: #FeFeFe;
+    margin-left: 180px;
+    background: transparent;
     position: relative;
-
+    min-width: 1680px;
 }
 
-.recommend_page::after {
-    content: '';
-    position: fixed;
-    top: -362.33px;
-    right: -800px;
-    width: 2034.34px;
-    height: 1049.78px;
-    background: radial-gradient(ellipse 80% 60% at center,
-            #E6E5D0 0%,
-            rgba(230, 229, 208, 0.6) 30%,
-            transparent 70%);
-    opacity: 0.3;
-    transform: rotate(15deg);
-    filter: blur(200px);
-    z-index: 0;
-    pointer-events: none;
-}
-
+.recommend_page::after,
 .recommend_page::before {
-    content: '';
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(110, 66, 217, 0.15) 0%, transparent 70%);
-    filter: blur(120px);
-    z-index: 0;
-    pointer-events: none;
+    display: none;
 }
 
 .recommend_topNav {
@@ -138,6 +120,8 @@ body {
     display: flex;
     gap: 24px;
     flex: none;
+    width: max-content;
+    min-width: 1664px;
 }
 
 
@@ -780,8 +764,6 @@ body {
     position: relative;
     min-width: 300px;
     z-index: 50;
-    /* ✅ 추가 */
-
 }
 
 .center_node {
@@ -1037,17 +1019,6 @@ body {
     padding-bottom: 0;
 }
 
-#nav ul li.active a,
-#nav ul li:nth-child(3) a {
-    background-color: #EDEFF0 !important;
-    color: #000 !important;
-}
-
-#nav ul li.active a {
-    background-color: #E8E8EA !important;
-    color: #000 !important;
-}
-
 .recommend_chart_area {
     flex: 1;
     background: rgba(255, 255, 255, 0.3);
@@ -1121,95 +1092,4 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-@media (max-width: 1400px) {
-    .recommend_mindmap {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-
-    .mindmap_left,
-    .mindmap_right {
-        width: 100%;
-        max-width: 600px;
-    }
-
-    .recommend_list {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-    }
-
-    .recommend_list li {
-        flex-direction: column !important;
-        text-align: center;
-    }
-
-    .recommend_info {
-        text-align: center !important;
-    }
-
-    .progress_bar {
-        display: none;
-    }
-
-    .info_popup {
-        display: none;
-    }
-
-    .connection_lines {
-        display: none;
-    }
-}
-
-
-@media (max-width: 1400px) {
-    .recommend_content {
-        flex-direction: column;
-    }
-
-    .company_card {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .recommend_mindmap {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .mindmap_left,
-    .mindmap_right {
-        width: 100%;
-    }
-
-    .recommend_list {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .mindmap_left .recommend_list li::after,
-    .mindmap_right .recommend_list li::before {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .recommend_page {
-        margin-left: 0;
-        padding: 15px;
-    }
-
-    .company_stats {
-        grid-template-columns: 1fr;
-    }
-
-    .recommend_header {
-        flex-direction: column;
-        gap: 16px;
-    }
 }

@@ -1,8 +1,14 @@
 /* ==================== Main Content ==================== */
-.main-content {
-    flex: 1;
-    margin-left: 180px;
-    padding: 40px 0px;
+html {
+    overflow-x: auto;
+    overflow-y: auto;
+    min-width: 1880px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 1880px;
     background:
         radial-gradient(circle at 10% 20%, rgba(250, 250, 246, 1) 0%, transparent 25%),
         radial-gradient(circle at 20% 50%, rgba(230, 229, 208, 0.3) 0%, transparent 30%),
@@ -10,12 +16,21 @@
         radial-gradient(circle at 85% 75%, rgba(58, 16, 110, 0.35) 0%, transparent 40%),
         radial-gradient(circle at 50% 85%, rgba(71, 66, 217, 0.25) 0%, transparent 45%),
         #FAFAF6;
-    min-height: 100vh;
+    background-attachment: fixed; /* 배경 고정 */
 }
 
+.main-content {
+    flex: 1;
+    margin-left: 180px;
+    padding: 40px 0px;
+    background: transparent; /* .main-content 배경 제거 */
+    min-height: 100vh;
+    min-width: 1700px;
+}
 .content-wrapper {
     max-width: 1600px;
     margin: 0 auto;
+    min-width: 1600px; /* 최소 너비 설정 */
 }
 
 .page-search #nav ul li:nth-child(1) a {
@@ -111,13 +126,12 @@
     padding: 4px;
     width: 380px;
     height: 56px;
-        align-items: center; /* ← 추가 */
-
+    align-items: center;
 }
 
 .tab-btn {
     flex: 1;
-    padding: 14px 0; /* ← 수정: 상하 패딩 동일하게 */
+    padding: 14px 0;
     font-family: 'Pretendard', sans-serif;
     font-weight: 600;
     font-size: 15px;
@@ -207,7 +221,7 @@
 /* ==================== Company Grid ==================== */
 .company-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 320px); /* 고정 너비 */
     gap: 15px;
 }
 
@@ -232,14 +246,12 @@
     overflow: hidden;
 }
 
-/* ✅ 배경 이미지 */
 .card-bg {
     width: 320px;
     height: 168px;
     object-fit: cover;
 }
 
-/* ✅ 그라디언트 오버레이 - 아래에서 위로 흰색 */
 .card-image::before {
     content: "";
     position: absolute;
@@ -282,12 +294,10 @@
     padding-bottom: 9px;
     margin-bottom: 9px;
     border-bottom: 1px solid #E5E5E5;
-    /* ✅ 밑줄 */
 }
 
 .info-row:last-child {
     border-bottom: none;
-    /* ✅ 마지막 줄은 밑줄 제거 */
 }
 
 .info-label {
@@ -301,13 +311,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     height: 21px;
     padding: 1px 6px 1px 5px;
     border-radius: 5px;
-
     background: #756D8C;
-    /* ✅ 뱃지 배경 */
     font-family: 'Pretendard', sans-serif;
     font-size: 12px;
     font-weight: 600;
@@ -315,16 +322,12 @@
     gap: 2px;
 }
 
-/* ✅ 숫자 1 */
 .rank-number {
     color: #FFFFFF;
-    /* 흰색 */
 }
 
-/* ✅ 등급 텍스트 */
 .rank-text-small {
     color: #DAD6E6;
-    /* 연보라 or 연한 톤 */
     font-weight: 500;
 }
 
@@ -337,7 +340,6 @@
     letter-spacing: -2%;
     text-align: right;
     vertical-align: middle;
-
 }
 
 .info-value {
@@ -350,7 +352,6 @@
     vertical-align: middle;
     color: #000;
 }
-
 
 /* Rank Badge */
 .rank-badge {
@@ -399,33 +400,4 @@
     width: 16px;
     height: 16px;
     display: block;
-}
-
-/* ==================== Responsive Design ==================== */
-@media (max-width: 1400px) {
-    .company-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 1200px) {
-    .company-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .company-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .result-title {
-        font-size: 32px;
-    }
-}
-
-@media (max-width: 480px) {
-    .company-grid {
-        grid-template-columns: 1fr;
-    }
 }
